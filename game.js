@@ -4,7 +4,7 @@ let btnThree = document.getElementById("s-btn")
 let result = document.querySelector("div")
 let endScore = document.querySelector("p")
 let endScoreTwo = document.getElementById("end")
-
+let reset = document.getElementById("reset-el")
 
 let playerScore = 0;
 let computerScore = 0;
@@ -66,6 +66,8 @@ function playRound(playerChoice) {
     playerScore++;
   } else if (output.includes("lose")) {
     computerScore++;
+
+   
   }
 
   endScoreTwo.textContent = `Player score: ${playerScore}, Computer score: ${computerScore}`;
@@ -92,3 +94,17 @@ btnTwo.addEventListener("click", function () {
 btnThree.addEventListener("click", function () {
   playRound("scissors");
 });
+
+
+reset.addEventListener("click", function resetGame() {
+ playerScore =0;
+ computerScore = 0;
+ result.textContent = ""
+ endScore.textContent = ""
+ endScoreTwo.textContent = ""
+ 
+ 
+  btnOne.disabled = false;
+  btnTwo.disabled = false;
+  btnThree.disabled = false;
+})

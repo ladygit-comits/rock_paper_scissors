@@ -1,0 +1,86 @@
+body{
+    background: linear-gradient(to right, #ffb6c1, #ffe6f1);
+
+
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+}
+
+
+
+
+button{
+    margin: 10px;
+    padding:10px ;
+    border-radius: 10px;
+    background-color:orchid ;
+    width: 30%;
+}
+
+#reset-el{
+    margin-top: 40px;
+
+}
+ @keyframes tadaa {
+      0% {
+        transform: scale(1);
+      }
+      10%, 20% {
+        transform: scale(0.9) rotate(-3deg);
+      }
+      30%, 50%, 70%, 90% {
+        transform: scale(1.1) rotate(3deg);
+      }
+      40%, 60%, 80% {
+        transform: scale(1.1) rotate(-3deg);
+      }
+      100% {
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    strong.tadaa-text {
+      display: inline-block;
+      animation: tadaa 1s;
+      font-size: 40px;
+      color:darkred;
+      margin-bottom: 50px;
+    }
+
+
+    
+
+
+    @media (min-width: 768px) {
+        button {
+            margin: 10px;
+            padding:10px ;
+            border-radius: 10px;
+            background-color:orchid ;
+            width: 30%;
+        }}
+
+       
+@media (min-width: 992px) {
+    button {
+        margin: 10px;
+        padding:10px ;
+        border-radius: 10px;
+        background-color:orchid ;
+        width: 30%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    button {
+        margin: 10px;
+        padding:10px ;
+        border-radius: 10px;
+        background-color:orchid ;
+        width: 30%;
+    }
+  }
