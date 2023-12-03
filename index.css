@@ -31,6 +31,7 @@ body {
     color: rgb(77, 26, 26);
 }
 h1{
+    font-size: 20px;
     margin-left: 10%;
     font-family:'Comic Sans MS', cursive;
 }
@@ -75,43 +76,7 @@ strong.tadaa-text {
     margin-bottom: 50px;
 }
 
-@media (min-width: 768px) {
-    button {
-      
-        border-radius: 10px;
-        background-color: rgba(112, 142, 218, 0.111);
-        color: rgb(128, 0, 36);
-       
-    }
-   
-}
 
-@media (min-width: 992px) {
-    button {
-      
-        border-radius: 10px;
-        background-color: rgba(112, 142, 218, 0.111);
-        color: rgb(128, 0, 36);
-        width: 30%;
-        .right {
-          
-            top: 50%; 
-            right: 50%; 
-            margin-left: 30px;
-          }
-    }
-}
-
-@media (min-width: 1200px) {
-    button {
-        margin: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        background-color: rgba(112, 142, 218, 0.111);
-        color: rgb(128, 0, 36);
-        width: 30%;
-    }
-}
 #s-btn {
     background: none;
     border: none;
@@ -159,3 +124,94 @@ strong.tadaa-text {
     display: block;
  
 }
+
+/* Extra Small Devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* Your styles for small screens go here */
+  
+    .you{
+        font-size: 10px;
+        top: 33%;
+        padding-left: none;
+    }
+    
+
+    strong.tadaa-text {
+        font-size: 10px;
+    }
+    .toy{width: 90px;
+        margin-left: 10%;
+        margin-top: -60px;
+    }
+    
+
+    #gameOver{
+        font-size: 10px
+    }
+        #reset-el{width: 20px;
+            padding-left: 4%;
+          font-size: 10px;
+        }
+        #r-btn{
+            margin-top: -150px;
+           margin-left: -50px;
+          }
+       
+        #r-btn img{
+            width: 50px; 
+            height: auto;
+           margin-top: 180px;
+         
+          }
+
+          #p-btn img{
+
+            width: 50px; 
+            
+
+           }
+           #p-btn{
+            
+            margin-top: 120px;
+            margin-left: -50px;
+        }
+
+           #s-btn img {
+            width: 50px;
+          
+          }
+          #s-btn {
+            margin-top: -60px;
+            margin-left: -50px;
+          }
+         
+          .right {
+             font-size: 12px;
+              top: 21%; /* Adjust as needed for the desired height from the top */
+              right: 24%; /* Adjust as needed */
+              margin-left: -90px;
+            }
+          
+           
+}
+  
+  /* Small Devices (portrait tablets and large phones, 601px to 768px) */
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    /* Your styles for small tablets go here */
+  }
+  
+  /* Medium Devices (landscape tablets and small laptops, 769px to 992px) */
+  @media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* Your styles for medium-sized devices go here */
+  }
+  
+  /* Large Devices (laptops and desktops, 993px to 1200px) */
+  @media only screen and (min-width: 993px) and (max-width: 1200px) {
+    /* Your styles for larger devices go here */
+  }
+  
+  /* Extra Large Devices (large laptops and desktops, 1201px and up) */
+  @media only screen and (min-width: 1201px) {
+    /* Your styles for extra-large devices go here */
+  }
+  
