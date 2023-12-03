@@ -9,17 +9,32 @@
 </head>
 <body>
  
-  <strong class="tadaa-text">ROCK-PAPER-SCISSORS!</strong>
-  
-  <button id="r-btn"><strong>ROCK</strong></button>
-  <button id="p-btn"><strong>PAPER </strong></button>
-  <button id="s-btn"><strong>SCISSORS </strong></button>
-  <button id="reset-el"><strong>RESET GAME </strong></button>
+  <h1><strong class="tadaa-text">ROCK-PAPER-SCISSORS!</strong> </h1>
+ 
+  <img class="toy" src="toy.png" alt="toyStory">
+  <button   id="r-btn"   class="image-button">
+   <img  src="rock.png" alt="rock">
+  </button>
+  <button  id="p-btn"  class="image-button">
+    <img src="paper.png" alt="paper">
+  </button>
+  <p class="you">YOU</p>
+  <button id="s-btn" class="image-button">
+    <img src="scissors.png" alt="scissors">
+  </button>
   <div></div>
+ <section class="right">
+  <span id="text"></span>
 
-
-  <p> </p>
+  <div id="computerChoice"></div>
+  <p id="gameOver"> </p>
+  <div id="output-el"></div>
   <p id="end"></p>
+ 
+  <button id="reset-el">RESET GAME</button>
+  
+</section>
+
 
 </body>
 </html>

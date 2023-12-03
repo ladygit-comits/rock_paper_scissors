@@ -1,36 +1,52 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;}
-  body::before {
-  
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('background.jpg');
-    background-size: cover;
-    filter: blur(1px); /* Adjust the blur amount as needed */
-    z-index: -1;
-  }
-  
-
-button {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 30%;
-    background-color: rgba(112, 142, 218, 0.111);
-    color: rgb(128, 0, 36);
+*{
+    padding-left: 50px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 127, 223);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: right;
+    padding-left: 50px;
+}
+.you{
+   position: absolute;
+   top: 56%;
+    padding-left: 0%;
+    font-size: 20px;
+    font-family:'Press Start 2P', cursive;
+}
+.toy{
+    width: 200px;
+    transform: rotate(60deg);
+    margin-left: 25%;
+    margin-top: -80px;
+}
+#gameOver{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(77, 26, 26);
+}
+h1{
+    margin-left: 10%;
+    font-family:'Comic Sans MS', cursive;
+}
+.right {
+  position: absolute;
+    top: 50%; /* Adjust as needed for the desired height from the top */
+    right: 50%; /* Adjust as needed */
+    margin-left: 30px;
+  }
+
 #reset-el {
-    margin-top: 40px;
+    background-color: rgba(126, 42, 165, 0.178);
+    padding-right: 50px;
+    margin-bottom: 90%;
+    border-radius: 10px;
+   margin-left: 50%;
 }
 
 @keyframes tadaa {
@@ -61,23 +77,28 @@ strong.tadaa-text {
 
 @media (min-width: 768px) {
     button {
-        margin: 10px;
-        padding: 10px;
+      
         border-radius: 10px;
         background-color: rgba(112, 142, 218, 0.111);
         color: rgb(128, 0, 36);
-        width: 30%;
+       
     }
+   
 }
 
 @media (min-width: 992px) {
     button {
-        margin: 10px;
-        padding: 10px;
+      
         border-radius: 10px;
         background-color: rgba(112, 142, 218, 0.111);
         color: rgb(128, 0, 36);
         width: 30%;
+        .right {
+          
+            top: 50%; 
+            right: 50%; 
+            margin-left: 30px;
+          }
     }
 }
 
@@ -90,4 +111,51 @@ strong.tadaa-text {
         color: rgb(128, 0, 36);
         width: 30%;
     }
+}
+#s-btn {
+    background: none;
+    border: none;
+    width: 100px; 
+    margin-top: 20px;
+    height: 130px;
+    display: block;
+  }
+  
+  #s-btn img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    display: block;
+  }
+  
+  #r-btn{
+    background: none;
+    border: none;
+    background: none; 
+    width: 100px; 
+    height: 100px;
+    display: block;
+ 
+  }
+
+  #r-btn img{
+    width: 100px; 
+    height: auto;
+    display: block;
+  }
+  
+#p-btn{
+    background: none; 
+    border: none;
+    width: 100px; 
+    height: 100px;
+    display: block;
+    margin-top: 20px;
+}
+
+#p-btn img{
+
+ width: 100px; 
+    height: auto;
+    display: block;
+ 
 }
