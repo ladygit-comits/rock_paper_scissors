@@ -1,217 +1,133 @@
-*{
-    padding-left: 50px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
 }
 
 body {
     display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 127, 223);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: right;
-    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff7fdf, #7e2aa5);
+    color: #fff;
 }
-.you{
-   position: absolute;
-   top: 56%;
-    padding-left: 0%;
-    font-size: 20px;
-    font-family:'Press Start 2P', cursive;
-}
-.toy{
-    width: 200px;
-    transform: rotate(60deg);
-    margin-left: 25%;
-    margin-top: -80px;
-}
-#gameOver{
-    font-family: 'Press Start 2P', cursive;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(77, 26, 26);
-}
-h1{
-    font-size: 20px;
-    margin-left: 10%;
-    font-family:'Comic Sans MS', cursive;
-}
-.right {
-  position: absolute;
-    top: 50%; /* Adjust as needed for the desired height from the top */
-    right: 50%; /* Adjust as needed */
-    margin-left: 30px;
-  }
 
-#reset-el {
-    background-color: rgba(126, 42, 165, 0.178);
-    padding-right: 50px;
-    margin-bottom: 90%;
-    border-radius: 10px;
-   margin-left: 50%;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #ffdd00;
+    text-shadow: 2px 2px 5px #000;
+    margin-bottom: 20px;
 }
 
 @keyframes tadaa {
-    0% {
-        transform: scale(1);
-    }
-    10%, 20% {
-        transform: scale(0.9) rotate(-3deg);
-    }
-    30%, 50%, 70%, 90% {
-        transform: scale(1.1) rotate(3deg);
-    }
-    40%, 60%, 80% {
-        transform: scale(1.1) rotate(-3deg);
-    }
-    100% {
-        transform: scale(1) rotate(0);
-    }
+    0% { transform: scale(1); }
+    10%, 20% { transform: scale(0.9) rotate(-3deg); }
+    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
 }
 
-strong.tadaa-text {
+.tadaa-text {
     display: inline-block;
     animation: tadaa 1s;
-    font-size: 40px;
-    color: darkred;
-    margin-bottom: 50px;
+    font-size: 2.5rem;
 }
 
-
-#s-btn {
-    background: none;
-    border: none;
-    width: 100px; 
-    margin-top: 20px;
-    height: 130px;
-    display: block;
-  }
-  
-  #s-btn img {
-    width: 100px; /* Adjust the width as needed */
-    height: auto;
-    display: block;
-  }
-  
-  #r-btn{
-    background: none;
-    border: none;
-    background: none; 
-    width: 100px; 
-    height: 100px;
-    display: block;
- 
-  }
-
-  #r-btn img{
-    width: 100px; 
-    height: auto;
-    display: block;
-  }
-  
-#p-btn{
-    background: none; 
-    border: none;
-    width: 100px; 
-    height: 100px;
-    display: block;
-    margin-top: 20px;
+.toy {
+    width: 150px;
+    transform: rotate(20deg);
+    margin-bottom: 20px;
 }
 
-#p-btn img{
-
- width: 100px; 
-    height: auto;
-    display: block;
- 
+.choices {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-/* Extra Small Devices (phones, 600px and down) */
+.image-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-button img {
+    width: 80px;
+    height: auto;
+}
+
+.image-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #fff;
+}
+
+.you {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#gameOver, #output-el, #end, #text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffdd00;
+    text-shadow: 1px 1px 5px #000;
+}
+
+#reset-el {
+    background: rgba(255, 0, 150, 0.3);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#reset-el:hover {
+    background: rgba(255, 0, 150, 0.6);
+    transform: scale(1.05);
+}
+
 @media only screen and (max-width: 600px) {
-    /* Your styles for small screens go here */
-  
-    .you{
-        font-size: 10px;
-        top: 33%;
-        padding-left: none;
+    .tadaa-text {
+        font-size: 1.5rem;
     }
-    
-
-    strong.tadaa-text {
-        font-size: 10px;
+    .toy {
+        width: 100px;
     }
-    .toy{width: 90px;
-        margin-left: 10%;
-        margin-top: -60px;
+    .image-button img {
+        width: 50px;
     }
-    
-
-    #gameOver{
-        font-size: 10px
+    #reset-el {
+        padding: 8px 15px;
+        font-size: 0.8rem;
     }
-        #reset-el{width: 20px;
-            padding-left: 4%;
-          font-size: 10px;
-        }
-        #r-btn{
-            margin-top: -150px;
-           margin-left: -50px;
-          }
-       
-        #r-btn img{
-            width: 50px; 
-            height: auto;
-           margin-top: 180px;
-         
-          }
-
-          #p-btn img{
-
-            width: 50px; 
-            
-
-           }
-           #p-btn{
-            
-            margin-top: 120px;
-            margin-left: -50px;
-        }
-
-           #s-btn img {
-            width: 50px;
-          
-          }
-          #s-btn {
-            margin-top: -60px;
-            margin-left: -50px;
-          }
-         
-          .right {
-             font-size: 12px;
-              top: 21%; /* Adjust as needed for the desired height from the top */
-              right: 24%; /* Adjust as needed */
-              margin-left: -90px;
-            }
-          
-           
 }
-  
-  /* Small Devices (portrait tablets and large phones, 601px to 768px) */
-  @media only screen and (min-width: 601px) and (max-width: 768px) {
-    /* Your styles for small tablets go here */
-  }
-  
-  /* Medium Devices (landscape tablets and small laptops, 769px to 992px) */
-  @media only screen and (min-width: 769px) and (max-width: 992px) {
-    /* Your styles for medium-sized devices go here */
-  }
-  
-  /* Large Devices (laptops and desktops, 993px to 1200px) */
-  @media only screen and (min-width: 993px) and (max-width: 1200px) {
-    /* Your styles for larger devices go here */
-  }
-  
-  /* Extra Large Devices (large laptops and desktops, 1201px and up) */
-  @media only screen and (min-width: 1201px) {
-    /* Your styles for extra-large devices go here */
-  }
-  
