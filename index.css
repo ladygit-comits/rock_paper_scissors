@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;
 }
 
 body {
@@ -10,124 +9,119 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff7fdf, #7e2aa5);
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: #fff;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    text-align: center;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
     width: 90%;
     max-width: 600px;
-    padding: 20px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-h1 {
+.title {
     font-size: 2rem;
-    color: #ffdd00;
-    text-shadow: 2px 2px 5px #000;
+    color: #ff3cac;
+    text-shadow: 0 0 10px #ff3cac, 0 0 20px #ff3cac, 0 0 30px #ff3cac;
     margin-bottom: 20px;
 }
 
-@keyframes tadaa {
-    0% { transform: scale(1); }
-    10%, 20% { transform: scale(0.9) rotate(-3deg); }
-    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
-    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
-    100% { transform: scale(1) rotate(0); }
+.players {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
-.tadaa-text {
-    display: inline-block;
-    animation: tadaa 1s;
-    font-size: 2.5rem;
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.toy {
-    width: 150px;
-    transform: rotate(20deg);
-    margin-bottom: 20px;
+.player img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 5px;
+}
+
+.label {
+    color: #00fff7;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px #00fff7;
+    margin-bottom: 5px;
 }
 
 .choices {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.image-button {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #fff;
+.choice-btn {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid #00fff7;
     border-radius: 15px;
     padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.image-button img {
-    width: 80px;
-    height: auto;
+.choice-btn img {
+    width: 60px;
+    height: 60px;
 }
 
-.image-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #fff;
+.choice-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #00fff7;
 }
 
-.you {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.right {
+.results {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-#gameOver, #output-el, #end, #text {
+#text, #gameOver, #end {
     font-size: 1rem;
-    font-weight: bold;
-    color: #ffdd00;
-    text-shadow: 1px 1px 5px #000;
+    color: #ff3cac;
+    text-shadow: 0 0 10px #ff3cac;
 }
 
 #reset-el {
-    background: rgba(255, 0, 150, 0.3);
-    border: none;
-    border-radius: 10px;
+    background: rgba(255, 0, 150, 0.2);
+    border: 2px solid #ff3cac;
+    border-radius: 15px;
     padding: 10px 20px;
-    color: #fff;
     font-weight: bold;
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 #reset-el:hover {
-    background: rgba(255, 0, 150, 0.6);
+    background: rgba(255, 0, 150, 0.5);
+    box-shadow: 0 0 20px #ff3cac;
     transform: scale(1.05);
 }
 
 @media only screen and (max-width: 600px) {
-    .tadaa-text {
-        font-size: 1.5rem;
-    }
-    .toy {
-        width: 100px;
-    }
-    .image-button img {
-        width: 50px;
-    }
-    #reset-el {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
+    .title { font-size: 1.5rem; }
+    .player img { width: 50px; height: 50px; }
+    .choice-btn img { width: 40px; height: 40px; }
+    #reset-el { padding: 8px 15px; font-size: 0.8rem; }
 }
