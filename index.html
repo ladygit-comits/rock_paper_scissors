@@ -3,37 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock-Paper-Scissors</title>
+  <title>Dark Anime RPS</title>
   <link rel="stylesheet" href="index.css">
   <script src="game.js" defer></script>
 </head>
 <body>
   <div class="container">
-    <h1><strong class="tadaa-text">ROCK-PAPER-SCISSORS!</strong></h1>
-    <img class="toy" src="toy.png" alt="toyStory">
+    <h1><strong class="title">ROCK-PAPER-SCISSORS</strong></h1>
+    
+    <div class="players">
+      <div class="player you-player">
+        <p class="label">YOU</p>
+        <img id="player-choice" src="placeholder.png" alt="Your Choice">
+      </div>
+      <div class="player computer-player">
+        <p class="label">COMPUTER</p>
+        <img id="computer-choice" src="placeholder.png" alt="Computer Choice">
+      </div>
+    </div>
 
     <div class="choices">
-      <button id="r-btn" class="image-button">
+      <button id="r-btn" class="choice-btn">
         <img src="rock.png" alt="rock">
       </button>
-      <button id="p-btn" class="image-button">
+      <button id="p-btn" class="choice-btn">
         <img src="paper.png" alt="paper">
       </button>
-      <button id="s-btn" class="image-button">
+      <button id="s-btn" class="choice-btn">
         <img src="scissors.png" alt="scissors">
       </button>
     </div>
 
-    <p class="you">YOU</p>
-
-    <section class="right">
-      <span id="text"></span>
-      <div id="computerChoice"></div>
+    <div class="results">
+      <p id="text"></p>
       <p id="gameOver"></p>
-      <div id="output-el"></div>
       <p id="end"></p>
-      <button id="reset-el">RESET GAME</button>
-    </section>
+    </div>
+
+    <button id="reset-el">RESET GAME</button>
   </div>
 </body>
 </html>
