@@ -9,31 +9,34 @@
 </head>
 <body>
   <div class="container">
-    <h1><strong class="tadaa-text">ROCK-PAPER-SCISSORS!</strong></h1>
-    <img class="toy" src="toy.png" alt="toyStory">
-
-    <div class="choices">
-      <button id="r-btn" class="image-button">
-        <img src="rock.png" alt="rock">
-      </button>
-      <button id="p-btn" class="image-button">
-        <img src="paper.png" alt="paper">
-      </button>
-      <button id="s-btn" class="image-button">
-        <img src="scissors.png" alt="scissors">
-      </button>
+    <div class="header-section">
+      <h1 class="tadaa-text">ROCK-PAPER-SCISSORS!</h1>
+      <img class="toy" src="toy.png" alt="toyStory">
     </div>
 
-    <p class="you">YOU</p>
+    <div class="main-game">
+      <div class="choices">
+        <button id="r-btn" class="image-button">
+          <img src="rock.png" alt="rock">
+        </button>
+        <button id="p-btn" class="image-button">
+          <img src="paper.png" alt="paper">
+        </button>
+        <button id="s-btn" class="image-button">
+          <img src="scissors.png" alt="scissors">
+        </button>
+      </div>
 
-    <section class="right">
-      <span id="text"></span>
-      <div id="computerChoice"></div>
-      <p id="gameOver"></p>
-      <div id="output-el"></div>
-      <p id="end"></p>
-      <button id="reset-el">RESET GAME</button>
-    </section>
+      <div class="right">
+        <p class="you">YOU</p>
+        <span id="text"></span>
+        <div id="computerChoice"></div>
+        <p id="output-el"></p>
+        <p id="gameOver"></p>
+        <p id="end"></p>
+        <button id="reset-el">RESET GAME</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>
