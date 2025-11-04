@@ -15,11 +15,12 @@ body {
     padding: 10px;
 }
 
+/* Main container */
 .container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     background: rgba(0,0,0,0.35);
     border-radius: 25px;
     padding: 20px;
@@ -28,13 +29,14 @@ body {
     align-items: center;
 }
 
+/* Header */
 .header-section {
     display: flex;
-    flex-direction: row;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     flex-wrap: wrap;
+    padding: 10px 20px;
 }
 
 h1 {
@@ -55,6 +57,19 @@ h1 {
     100% { transform: scale(1) rotate(0); }
 }
 
+/* Toy image */
+.header-section img.toy {
+    width: 120px;
+    height: auto;
+    transform: rotate(-15deg);
+    transition: transform 0.3s ease;
+}
+
+.header-section img.toy:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Game area */
 .main-game {
     display: flex;
     flex-direction: column;
@@ -63,14 +78,7 @@ h1 {
     align-items: center;
 }
 
-@media(min-width: 700px){
-    .main-game {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-}
-
+/* Choices (rock, paper, scissors) */
 .choices {
     display: flex;
     gap: 15px;
@@ -97,6 +105,7 @@ h1 {
     box-shadow: 0 0 20px #fff;
 }
 
+/* Right section (scores, computer choice, reset) */
 .right {
     display: flex;
     flex-direction: column;
@@ -135,6 +144,7 @@ h1 {
     text-align: center;
 }
 
+/* Reset button */
 #reset-el {
     padding: 12px 25px;
     border: none;
@@ -153,9 +163,60 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Responsive layouts */
+@media(min-width: 700px){
+    .main-game {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-section img.toy {
+        width: 160px;
+        align-self: center;
+        transform: rotate(-10deg);
+    }
+}
+
+@media(min-width: 1000px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .header-section {
+        justify-content: space-around;
+    }
+
+    .header-section img.toy {
+        width: 200px;
+        transform: rotate(-8deg);
+    }
+
+    .main-game {
+        gap: 40px;
+        align-items: flex-start;
+    }
+}
+
 @media(max-width: 700px){
     .main-game {
         flex-direction: column;
         align-items: center;
+    }
+
+    .header-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-section img.toy {
+        margin-top: 15px;
+        width: 100px;
+        transform: rotate(0deg);
     }
 }
