@@ -2,7 +2,7 @@ let btnOne = document.getElementById("r-btn");
 let btnTwo = document.getElementById("p-btn");
 let btnThree = document.getElementById("s-btn");
 let result = document.getElementById("output-el");
-let endScore = document.getElementById("gameOver")
+let endScore = document.getElementById("gameOver");
 let endScoreTwo = document.getElementById("end");
 let reset = document.getElementById("reset-el");
 
@@ -10,135 +10,92 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-  const randomNumber = Math.floor(Math.random() * 3);
-  const text = document.createElement("p")
-  const image = document.createElement('img');
-  image.alt = 'Computer Choice';
-  image.width = 100;
-  image.height = 100;
+    const choices = ["Rock", "Paper", "Scissors"];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    const choice = choices[randomIndex];
 
-  switch (randomNumber) {
-    case 0:
-     
-      image.src = 'rock.png';
-     image.style.position = 'absolute';
-     
-      image.style.left= '500px'; 
-      text.textContent="COMPUTER"
-      text.style.fontFamily = "'Press Start 2P', cursive";
+    const computerDiv = document.getElementById('computerChoice');
+    const textDiv = document.getElementById('text');
 
- text.style.position = 'absolute';
- text.style.top="40px"
-  text.style.left= '610px';
-  text.style.fontSize="20px"
-      document.getElementById('text').textContent= '' ;
-      document.getElementById('text').appendChild(text)
-      document.getElementById('computerChoice').textContent = ''; 
-      document.getElementById('computerChoice').appendChild(image);
-      return "Rock";
-    case 1:
-      image.src = 'paper.png';
-      image.style.position = 'absolute';
-     
-      image.style.left= '500px'; text.textContent="COMPUTER"
-      text.style.fontFamily = "'Press Start 2P', cursive";
-      text.style.fontSize="20px"
-      text.style.position = 'absolute';
-      text.style.top="40px"
-       text.style.left= '610px';
-           document.getElementById('text').textContent= '' ;
-           document.getElementById('text').appendChild(text)
+    // Clear previous content
+    computerDiv.textContent = '';
+    textDiv.textContent = '';
 
-      document.getElementById('computerChoice').textContent = ''; 
-      document.getElementById('computerChoice').appendChild(image);
-      return "Paper";
-    case 2:
-      image.src = 'scissors.png';
-     image.style.position = 'absolute';
-     
-      image.style.left= '500px'; 
-      text.textContent="COMPUTER"
-      text.style.fontFamily = "'Press Start 2P', cursive";
-      text.style.fontSize="20px"
- text.style.position = 'absolute';
- text.style.top="40px"
-  text.style.left= '610px';
-      document.getElementById('text').textContent= '' ;
-      document.getElementById('text').appendChild(text)
-      document.getElementById('computerChoice').textContent = '';
-      document.getElementById('computerChoice').appendChild(image);
-      return "Scissors";
-    default:
-      return "Error";
-  }
+    // Create and append image
+    const image = document.createElement('img');
+    image.alt = 'Computer Choice';
+    image.src = `${choice.toLowerCase()}.png`;
+    image.style.width = "80px";
+    image.style.height = "auto";
+    computerDiv.appendChild(image);
+
+    // Create and append text
+    const text = document.createElement('p');
+    text.textContent = "COMPUTER";
+    text.style.fontFamily = "'Press Start 2P', cursive";
+    text.style.fontSize = "16px";
+    text.style.color = "#ffdd00";
+    text.style.marginTop = "5px";
+    textDiv.appendChild(text);
+
+    return choice;
 }
 
 function player(playerSelection, computerSelection) {
-  const playerChoice = playerSelection.toLowerCase();
-  const computerChoice = computerSelection.toLowerCase();
+    const playerChoice = playerSelection.toLowerCase();
+    const computerChoice = computerSelection.toLowerCase();
 
-  if (playerChoice == computerChoice) {
-    return "It's a tie! Let's play again.";
-  }
+    if (playerChoice === computerChoice) {
+        return "It's a tie! Let's play again.";
+    }
 
-  if (
-    (playerChoice === "rock" && computerChoice === "scissors") ||
-    (playerChoice === "paper" && computerChoice === "rock") ||
-    (playerChoice === "scissors" && computerChoice === "paper")
-  ) {
-    return `You win! ${playerChoice} beats ${computerChoice}`;
-  } else {
-    return `You lose! ${computerChoice} beats ${playerChoice}`;
-  }
+    if (
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
+    ) {
+        return `You win! ${playerChoice} beats ${computerChoice}`;
+    } else {
+        return `You lose! ${computerChoice} beats ${playerChoice}`;
+    }
 }
 
 function playRound(playerChoice) {
-  const computerChoice = getComputerChoice();
-  const output = player(playerChoice, computerChoice);
-  result.textContent = `${output}`;
+    const computerChoice = getComputerChoice();
+    const output = player(playerChoice, computerChoice);
+    result.textContent = output;
 
-  if (output.includes("win")) {
-    playerScore++;
-  } else if (output.includes("lose")) {
-    computerScore++;
-  }
+    if (output.includes("win")) {
+        playerScore++;
+    } else if (output.includes("lose")) {
+        computerScore++;
+    }
 
-  endScoreTwo.textContent = `Player score: ${playerScore}, Computer score: ${computerScore}`;
+    endScoreTwo.textContent = `Player score: ${playerScore}, Computer score: ${computerScore}`;
 
-  if (playerScore === 5 || computerScore === 5) {
-    endScore.textContent = `Game Over! ${
-      playerScore === 5 ? 'Player' : 'Computer'
-    } wins!`;
+    if (playerScore === 5 || computerScore === 5) {
+        endScore.textContent = `Game Over! ${playerScore === 5 ? 'Player' : 'Computer'} wins!`;
 
-    btnOne.disabled = true;
-    btnTwo.disabled = true;
-    btnThree.disabled = true;
-  }
+        btnOne.disabled = true;
+        btnTwo.disabled = true;
+        btnThree.disabled = true;
+    }
 }
 
-btnOne.addEventListener("click", function () {
-  playRound("rock");
-  
-});
+btnOne.addEventListener("click", () => playRound("rock"));
+btnTwo.addEventListener("click", () => playRound("paper"));
+btnThree.addEventListener("click", () => playRound("scissors"));
 
-btnTwo.addEventListener("click", function () {
-  playRound("paper");
-});
+reset.addEventListener("click", () => {
+    playerScore = 0;
+    computerScore = 0;
+    result.textContent = "";
+    endScore.textContent = "";
+    endScoreTwo.textContent = "";
+    document.getElementById('computerChoice').textContent = '';
+    document.getElementById('text').textContent = '';
 
-btnThree.addEventListener("click", function () {
-  playRound("scissors");
-});
-
-reset.addEventListener("click", function resetGame() {
-  playerScore = 0;
-  computerScore = 0;
-  result.textContent = "";
-  endScore.textContent = "";
-  endScoreTwo.textContent = "";
-  document.getElementById('computerChoice').textContent = ''; 
-
-  btnOne.disabled = false;
-  btnTwo.disabled = false;
-  btnThree.disabled = false;
-  document.getElementById('text').textContent= '' ;
+    btnOne.disabled = false;
+    btnTwo.disabled = false;
+    btnThree.disabled = false;
 });
