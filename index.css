@@ -21,7 +21,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 650px;
+    max-width: 800px;
     padding: 25px;
     background: rgba(0,0,0,0.35);
     border-radius: 25px;
@@ -69,10 +69,14 @@ h1 {
 
 .choices {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+}
+
+@media (min-width: 700px) {
+    .choices {
+        flex-direction: row;
+    }
 }
 
 .image-button {
@@ -108,7 +112,7 @@ h1 {
     align-items: center;
     gap: 12px;
     width: 100%;
-    max-width: 260px;
+    max-width: 300px;
     padding: 15px;
     background: rgba(0,0,0,0.2);
     border-radius: 15px;
@@ -129,6 +133,12 @@ h1 {
 #computerChoice img {
     max-width: 80px;
     height: auto;
+}
+
+#text p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #ffdd00;
 }
 
 #gameOver, #output-el, #end, #text {
