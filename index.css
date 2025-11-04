@@ -32,10 +32,10 @@ body {
 /* Header */
 .header-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap;
+    text-align: center;
     padding: 10px 20px;
 }
 
@@ -55,18 +55,6 @@ h1 {
     30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
     40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
     100% { transform: scale(1) rotate(0); }
-}
-
-/* Toy image */
-.header-section img.toy {
-    width: 120px;
-    height: auto;
-    transform: rotate(-15deg);
-    transition: transform 0.3s ease;
-}
-
-.header-section img.toy:hover {
-    transform: rotate(0deg) scale(1.05);
 }
 
 /* Game area */
@@ -169,36 +157,17 @@ h1 {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 40px;
     }
 
     h1 {
         font-size: 2.5rem;
-    }
-
-    .header-section img.toy {
-        width: 160px;
-        align-self: center;
-        transform: rotate(-10deg);
     }
 }
 
 @media(min-width: 1000px) {
     .container {
         max-width: 1000px;
-    }
-
-    .header-section {
-        justify-content: space-around;
-    }
-
-    .header-section img.toy {
-        width: 200px;
-        transform: rotate(-8deg);
-    }
-
-    .main-game {
-        gap: 40px;
-        align-items: flex-start;
     }
 }
 
@@ -212,11 +181,5 @@ h1 {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    .header-section img.toy {
-        margin-top: 15px;
-        width: 100px;
-        transform: rotate(0deg);
     }
 }
